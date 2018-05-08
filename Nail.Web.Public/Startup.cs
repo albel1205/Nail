@@ -71,5 +71,3 @@ namespace Nail.Web.Public
         }
     }
 }
-
-
