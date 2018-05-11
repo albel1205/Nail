@@ -1,10 +1,10 @@
-﻿namespace Nail.Infrastructure.Messaging
+﻿namespace CQRS.Infrastructure.Messaging.Handling
 {
     using System;
     using System.Collections.Generic;
     using System.Text;
 
-    public interface IEvent
+    public interface IEventHandlerRegistry
     {
     }
 }

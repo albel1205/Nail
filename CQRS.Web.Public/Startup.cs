@@ -2,7 +2,7 @@
 // Copyright (c) Success Software Services. All rights reserved.
 // </copyright>
 
-namespace Nail.Web.Public
+namespace CQRS.Web.Public
 {
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;

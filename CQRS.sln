@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nail.Web.Public", "Nail.Web.Public\Nail.Web.Public.csproj", "{5DD216AB-9A1E-4E0E-9B02-5ABC7EFCFA50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS.Web.Public", "CQRS.Web.Public\CQRS.Web.Public.csproj", "{5DD216AB-9A1E-4E0E-9B02-5ABC7EFCFA50}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{8ED35CFA-D562-4CC0-A63A-FE91DEC5F82B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nail.Infrastructure", "Nail.Infrastructure\Nail.Infrastructure.csproj", "{35521A39-3D60-4FC9-9B8F-91538DC76370}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS.Infrastructure", "CQRS.Infrastructure\CQRS.Infrastructure.csproj", "{35521A39-3D60-4FC9-9B8F-91538DC76370}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nail.Infrastructure.Tests", "Nail.Infrastructure.Tests\Nail.Infrastructure.Tests.csproj", "{8089C6DA-6582-4CF3-ACCE-6A25002E02D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS.Infrastructure.Tests", "CQRS.Infrastructure.Tests\CQRS.Infrastructure.Tests.csproj", "{8089C6DA-6582-4CF3-ACCE-6A25002E02D9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{591F5A1F-0191-4496-8125-4030CB91DFFD}"
 	ProjectSection(SolutionItems) = preProject

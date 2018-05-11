@@ -14,11 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Nail.Infrastructure\Nail.Infrastructure.csproj" />
+    <AdditionalFiles Include="..\stylecop.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <AdditionalFiles Include="..\stylecop.json" />
+    <ProjectReference Include="..\CQRS.Infrastructure\CQRS.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

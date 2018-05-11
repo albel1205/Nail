@@ -1,4 +1,4 @@
-﻿namespace Nail.Infrastructure.Messaging
+﻿namespace CQRS.Infrastructure.Messaging
 {
     using System;
     using System.Collections.Generic;

@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>CQRS.Infrastructure</AssemblyName>
+    <RootNamespace>CQRS.Infrastructure</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

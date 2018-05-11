@@ -2,7 +2,7 @@
 // Copyright (c) Success Software Services. All rights reserved.
 // </copyright>
 
-namespace Nail.Web.Public.Controllers
+namespace CQRS.Web.Public.Controllers
 {
     using System;
     using System.Collections.Generic;

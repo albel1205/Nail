@@ -1,4 +1,4 @@
-﻿namespace Nail.Infrastructure.Messaging
+﻿namespace CQRS.Infrastructure.Messaging
 {
     using System;
     using System.Collections.Generic;
@@ -6,5 +6,6 @@
 
     public interface ICommand
     {
+        Guid Id { get; }
     }
 }

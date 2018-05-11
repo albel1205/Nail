@@ -1,4 +1,4 @@
-﻿namespace Nail.Infrastructure.Messaging
+﻿namespace CQRS.Infrastructure.Messaging
 {
     using System;
     using System.Collections.Generic;
@@ -24,5 +24,18 @@
         }
 
         public T Body { get; private set; }
+
+        public TimeSpan Delay { get; set; }
+
+        public TimeSpan TimeToLive { get; set; }
+
+        public string CorrelationId { get; set; }
+
+        public string MessageId { get; set; }
+
+        public static implicit operator Envelop<T>(T body)
+        {
+            return Envelop.Create<T>(body);
+        }
     }
 }
