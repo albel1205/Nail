@@ -6,5 +6,6 @@
 
     public interface IEventHandlerRegistry
     {
+        void Register(IEventHandler eventHandler);
     }
 }

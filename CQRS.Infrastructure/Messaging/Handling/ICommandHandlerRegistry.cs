@@ -6,5 +6,6 @@
 
     public interface ICommandHandlerRegistry
     {
+        void Register(ICommandHandler commandHandler);
     }
 }
