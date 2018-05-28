@@ -4,21 +4,21 @@
     using System.Collections.Generic;
     using System.Text;
 
-    public abstract class Envelop
+    public abstract class Envelope
     {
-        public static Envelop<T> Create<T>(T body)
+        public static Envelope<T> Create<T>(T body)
         {
-            return new Envelop<T>(body);
+            return new Envelope<T>(body);
         }
     }
 
-    public class Envelop<T> : Envelop
+    public class Envelope<T> : Envelope
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Envelop{T}"/> class.
+        /// Initializes a new instance of the <see cref="Envelope{T}"/> class.
         /// </summary>
         /// <param name="body">body of the Envelop</param>
-        public Envelop(T body)
+        public Envelope(T body)
         {
             this.Body = body;
         }
@@ -33,9 +33,9 @@
 
         public string MessageId { get; set; }
 
-        public static implicit operator Envelop<T>(T body)
+        public static implicit operator Envelope<T>(T body)
         {
-            return Envelop.Create<T>(body);
+            return Envelope.Create<T>(body);
         }
     }
 }

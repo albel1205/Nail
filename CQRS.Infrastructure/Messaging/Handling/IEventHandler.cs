@@ -14,9 +14,9 @@
         void Handle(T @event);
     }
 
-    public interface IEventEnvelopHandler<T> : IEventHandler
+    public interface IEnvelopedEventHandler<T> : IEventHandler
         where T : IEvent
     {
-        void Handle(Envelop<T> envelop);
+        void Handle(Envelope<T> envelop);
     }
 }

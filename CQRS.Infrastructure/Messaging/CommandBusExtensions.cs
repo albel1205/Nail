@@ -9,12 +9,12 @@
     {
         public static void Send(this ICommandBus commandBus, ICommand command)
         {
-            commandBus.Send(new Envelop<ICommand>(command));
+            commandBus.Send(new Envelope<ICommand>(command));
         }
 
         public static void Send(this ICommandBus commandBus, IEnumerable<ICommand> commands)
         {
-            commandBus.Send(commands.Select(x => new Envelop<ICommand>(x)));
+            commandBus.Send(commands.Select(x => new Envelope<ICommand>(x)));
         }
     }
 }

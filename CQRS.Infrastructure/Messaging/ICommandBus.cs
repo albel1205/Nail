@@ -6,8 +6,8 @@
 
     public interface ICommandBus
     {
-        void Send(Envelop<ICommand> command);
+        void Send(Envelope<ICommand> command);
 
-        void Send(IEnumerable<Envelop<ICommand>> commands);
+        void Send(IEnumerable<Envelope<ICommand>> commands);
     }
 }

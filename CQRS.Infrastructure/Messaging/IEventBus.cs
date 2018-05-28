@@ -6,8 +6,8 @@
 
     public interface IEventBus
     {
-        void Publish(Envelop<IEvent> @event);
+        void Publish(Envelope<IEvent> @event);
 
-        void Publish(IEnumerable<Envelop<IEvent>> events);
+        void Publish(IEnumerable<Envelope<IEvent>> events);
     }
 }

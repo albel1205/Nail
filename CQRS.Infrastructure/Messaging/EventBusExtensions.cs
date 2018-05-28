@@ -9,12 +9,12 @@ namespace CQRS.Infrastructure.Messaging
     {
         public static void Publish(this IEventBus eventBus, IEvent @event)
         {
-            eventBus.Publish(new Envelop<IEvent>(@event));
+            eventBus.Publish(new Envelope<IEvent>(@event));
         }
 
         public static void Publish(this IEventBus eventBus, IEnumerable<IEvent> events)
         {
-            eventBus.Publish(events.Select(x => new Envelop<IEvent>(x)));
+            eventBus.Publish(events.Select(x => new Envelope<IEvent>(x)));
         }
     }
 }
