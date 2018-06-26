@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CQRS.Infrastructure.Messaging
+namespace Infrastructure.Messaging
 {
     public static class EventBusExtensions
     {

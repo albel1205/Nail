@@ -1,9 +1,9 @@
-﻿namespace CQRS.Infrastructure.MessageLog
+﻿namespace Infrastructure.MessageLog
 {
     using System;
     using System.Collections.Generic;
     using System.Text;
-    using CQRS.Infrastructure.Messaging;
+    using Infrastructure.Messaging;
 
     public static class EventLogExtensions
     {

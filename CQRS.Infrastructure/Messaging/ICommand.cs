@@ -1,4 +1,4 @@
-﻿namespace CQRS.Infrastructure.Messaging
+﻿namespace Infrastructure.Messaging
 {
     using System;
     using System.Collections.Generic;

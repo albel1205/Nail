@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 using System.Security.Permissions;
 using System.Text;
 
-namespace CQRS.Infrastructure
+namespace Infrastructure
 {
     [Serializable]
     public class EntityNotFoundException : Exception

@@ -1,4 +1,4 @@
-﻿namespace CQRS.Infrastructure.Tasks
+﻿namespace Infrastructure.Tasks
 {
     using System;
     using System.Collections.Generic;

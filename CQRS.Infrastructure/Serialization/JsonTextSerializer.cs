@@ -1,4 +1,4 @@
-﻿namespace CQRS.Infrastructure.Serialization
+﻿namespace Infrastructure.Serialization
 {
     using System.IO;
     using System.Runtime.Serialization;

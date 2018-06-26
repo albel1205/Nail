@@ -1,4 +1,4 @@
-﻿namespace CQRS.Infrastructure.Messaging
+﻿namespace Infrastructure.Messaging
 {
     using System;
     using System.Collections.Generic;
@@ -6,7 +6,7 @@
     using System.Linq.Expressions;
     using System.Reflection;
     using System.Text;
-    using CQRS.Infrastructure.Messaging.Handling;
+    using Infrastructure.Messaging.Handling;
 
     public class EventDispatcher
     {

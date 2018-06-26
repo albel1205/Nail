@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace CQRS.Infrastructure.Serialization
+namespace Infrastructure.Serialization
 {
     public interface ITextSerializer
     {

@@ -1,9 +1,9 @@
-﻿namespace CQRS.Infrastructure.Processes
+﻿namespace Infrastructure.Processes
 {
     using System;
     using System.Collections.Generic;
     using System.Text;
-    using CQRS.Infrastructure.Messaging;
+    using Infrastructure.Messaging;
 
     public interface IProcessManager
     {

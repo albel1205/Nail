@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CQRS.Infrastructure.EventSourcing
+namespace Infrastructure.EventSourcing
 {
     public interface IMementoOriginator
     {

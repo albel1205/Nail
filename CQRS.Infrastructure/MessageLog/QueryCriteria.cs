@@ -1,4 +1,4 @@
-﻿namespace CQRS.Infrastructure.MessageLog
+﻿namespace Infrastructure.MessageLog
 {
     using System;
     using System.Collections.Generic;

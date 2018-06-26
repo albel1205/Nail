@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CQRS.Infrastructure.Database
+namespace Infrastructure.Database
 {
     public interface IAggregateRoot
     {

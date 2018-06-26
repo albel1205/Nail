@@ -1,4 +1,4 @@
-﻿namespace CQRS.Infrastructure.Processes
+﻿namespace Infrastructure.Processes
 {
     using System;
     using System.Linq.Expressions;

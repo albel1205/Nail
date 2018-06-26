@@ -1,8 +1,8 @@
-﻿namespace CQRS.Infrastructure.Database
+﻿namespace Infrastructure.Database
 {
     using System;
 
-    public interface IDataContext<T> :  IDisposable
+    public interface IDataContext<T> : IDisposable
         where T : IAggregateRoot
     {
         T Find(Guid Id);
