@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Infrastructure.EventSourcing
 {
-    public interface IEventSourcedRepository<TEventSourced> 
+    public interface IEventSourcedRepository<TEventSourced>
         where TEventSourced : IEventSourced
     {
         /// <summary>

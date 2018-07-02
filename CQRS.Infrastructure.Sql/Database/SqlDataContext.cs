@@ -11,6 +11,12 @@
         private readonly DbContext dbContext;
         private readonly IEventBus eventBus;
 
+        public SqlDataContext(DbContext dbContext, IEventBus eventBus)
+        {
+            this.dbContext = dbContext;
+            this.eventBus = eventBus;
+        }
+
         ~SqlDataContext()
         {
             this.Dispose(false);
@@ -31,15 +37,14 @@
         {
             var entity = this.dbContext.Entry<T>(aggregate);
 
-            if(entity.State == EntityState.Detached)
+            if (entity.State == EntityState.Detached)
             {
                 this.dbContext.Set<T>().Add(aggregate);
             }
 
             this.dbContext.SaveChanges();
 
-            var publisher = aggregate as IEventPublisher;
-            if (publisher != null)
+            if (aggregate is IEventPublisher publisher)
             {
                 this.eventBus.Publish(publisher.Events);
             }

@@ -50,7 +50,7 @@ namespace Infrastructure.EventSourcing
 
         protected void LoadFrom(IEnumerable<IVersionedEvent> pastEvents)
         {
-            foreach(var @event in pastEvents)
+            foreach (var @event in pastEvents)
             {
                 this.handlers[@event.GetType()].Invoke(@event);
                 this.version = @event.Version;
