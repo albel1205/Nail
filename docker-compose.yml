@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  mvc.web.public:
+    image: ${DOCKER_REGISTRY}mvcwebpublic
+    build:
+      context: .
+      dockerfile: Mvc.Web.Public\Dockerfile

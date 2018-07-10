@@ -7,14 +7,25 @@
 
     public class EventStoreDbContext : DbContext
     {
+        private string connectionString;
+
+        public EventStoreDbContext(string connectionString)
+            : base()
+        {
+            this.connectionString = connectionString;
+        }
+
         public EventStoreDbContext(DbContextOptions<EventStoreDbContext> options)
             : base(options)
         {
         }
 
+        public DbSet<Event> Events { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseSqlServer(this.connectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

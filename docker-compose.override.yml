@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  mvc.web.public:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+networks:
+  default:
+    external:
+      name: nat
