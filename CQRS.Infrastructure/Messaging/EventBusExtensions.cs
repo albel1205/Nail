@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Infrastructure.Messaging
+﻿namespace Infrastructure.Messaging
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
     public static class EventBusExtensions
     {
         public static void Publish(this IEventBus eventBus, IEvent @event)

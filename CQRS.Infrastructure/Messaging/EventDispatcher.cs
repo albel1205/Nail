@@ -27,7 +27,7 @@
 
         public void Register(IEnumerable<IEventHandler> handlers)
         {
-            foreach(var handler in handlers)
+            foreach (var handler in handlers)
             {
                 this.Register(handler);
             }

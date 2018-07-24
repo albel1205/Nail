@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-using System.Security.Permissions;
-using System.Text;
-
-namespace Infrastructure
+﻿namespace Infrastructure
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Security.Permissions;
+    using System.Text;
+
     [Serializable]
     public class EntityNotFoundException : Exception
     {

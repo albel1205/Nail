@@ -5,19 +5,19 @@
     using global::Infrastructure.Messaging;
     using Microsoft.EntityFrameworkCore;
 
-    public class SqlDataContext<T> : IDataContext<T>
+    public class SqlAggregateContext<T> : IDataContext<T>
         where T : class, IAggregateRoot
     {
         private readonly DbContext dbContext;
         private readonly IEventBus eventBus;
 
-        public SqlDataContext(DbContext dbContext, IEventBus eventBus)
+        public SqlAggregateContext(DbContext dbContext, IEventBus eventBus)
         {
             this.dbContext = dbContext;
             this.eventBus = eventBus;
         }
 
-        ~SqlDataContext()
+        ~SqlAggregateContext()
         {
             this.Dispose(false);
         }

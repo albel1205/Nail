@@ -1,15 +1,20 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Infrastructure.EventSourcing;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
-using System.IO;
-using Infrastructure.Serialization;
-using Infrastructure.Messaging;
-
-namespace Infrastructure.Sql.EventSourcing
+﻿namespace Infrastructure.Sql.EventSourcing
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Text;
+    using Infrastructure.EventSourcing;
+    using Infrastructure.Messaging;
+    using Infrastructure.Serialization;
+    using Microsoft.EntityFrameworkCore;
+
+    /// <summary>
+    /// SqlRepository to manipulate EventSources from SqlServer
+    /// </summary>
+    /// <typeparam name="T">Event entity, see <see cref="Event"/></typeparam>
+    /// <remarks>TODO: apply ObjectCache & IMementoOrinator to read / write EventSourced from cache</remarks>
     public class SqlEventSourcedRepository<T> : IEventSourcedRepository<T>
         where T : class, IEventSourced
     {
@@ -19,10 +24,11 @@ namespace Infrastructure.Sql.EventSourcing
         private Func<Guid, IEnumerable<IVersionedEvent>, T> entityFactory;
         private IEventBus eventBus;
 
-        public SqlEventSourcedRepository(EventStoreDbContext dbContext, IEventBus eventBus)
+        public SqlEventSourcedRepository(EventStoreDbContext dbContext, IEventBus eventBus, ITextSerializer serializer)
         {
             this.eventStoreDbContext = dbContext;
             this.eventBus = eventBus;
+            this.serializer = serializer;
 
             var constructor = typeof(T).GetConstructor(new[] { typeof(Guid), typeof(IEnumerable<IVersionedEvent>) });
             if (constructor == null)

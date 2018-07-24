@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Infrastructure.EventSourcing
+﻿namespace Infrastructure.EventSourcing
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
     public interface IEventSourced
     {
         Guid Id { get; }
