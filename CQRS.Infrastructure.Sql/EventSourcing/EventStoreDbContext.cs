@@ -5,33 +5,18 @@
     using System.Text;
     using Microsoft.EntityFrameworkCore;
 
-    public class EventStoreDbContext : DbContext
+    public class EventStoreDbContext : SqlDbContext
     {
-        private string connectionString;
-
         public EventStoreDbContext(string connectionString)
-            : base()
+            : base(connectionString)
         {
-            this.connectionString = connectionString;
-        }
-
-        public EventStoreDbContext(DbContextOptions<EventStoreDbContext> options)
-            : base(options)
-        {
+            this.ConnectionString = connectionString;
         }
 
         public DbSet<Event> Events { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void ConfigureModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(this.connectionString);
-        }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-
             modelBuilder.Entity<Event>()
                 .ToTable("Events")
                 .HasKey(x => new { x.AggregateId, x.AggregateType, x.Version });

@@ -1,23 +1,23 @@
-﻿namespace CQRS.Infrastructure.Sql.Database
+﻿namespace Infrastructure.Sql
 {
     using System;
-    using global::Infrastructure.Database;
-    using global::Infrastructure.Messaging;
+    using System.Collections.Generic;
+    using System.Text;
+    using Infrastructure.Database;
+    using Infrastructure.Messaging;
     using Microsoft.EntityFrameworkCore;
 
-    public class SqlAggregateContext<T> : IDataContext<T>
+    public class SqlRepository<T> : IAggregateRepository<T>
         where T : class, IAggregateRoot
     {
         private readonly DbContext dbContext;
-        private readonly IEventBus eventBus;
 
-        public SqlAggregateContext(DbContext dbContext, IEventBus eventBus)
+        public SqlRepository(DbContext dbContext)
         {
             this.dbContext = dbContext;
-            this.eventBus = eventBus;
         }
 
-        ~SqlAggregateContext()
+        ~SqlRepository()
         {
             this.Dispose(false);
         }
@@ -33,7 +33,7 @@
             return this.dbContext.Set<T>().Find(Id);
         }
 
-        public void Save(T aggregate)
+        public virtual void Save(T aggregate)
         {
             var entity = this.dbContext.Entry<T>(aggregate);
 
@@ -43,11 +43,6 @@
             }
 
             this.dbContext.SaveChanges();
-
-            if (aggregate is IEventPublisher publisher)
-            {
-                this.eventBus.Publish(publisher.Events);
-            }
         }
 
         protected virtual void Dispose(bool disposing)

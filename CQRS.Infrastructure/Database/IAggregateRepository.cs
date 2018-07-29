@@ -2,7 +2,7 @@
 {
     using System;
 
-    public interface IDataContext<T> : IDisposable
+    public interface IAggregateRepository<T> : IDisposable
         where T : IAggregateRoot
     {
         T Find(Guid Id);
