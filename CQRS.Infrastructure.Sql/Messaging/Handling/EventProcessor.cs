@@ -6,5 +6,9 @@
 
     public class EventProcessor : MessageProcessor
     {
+        protected override void ProcessMessage(string payload)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

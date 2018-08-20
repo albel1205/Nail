@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Text;
 
-    public class MessageProcessor : IProcessor
+    public abstract class MessageProcessor : IProcessor
     {
         public void Start()
         {
@@ -15,5 +15,7 @@
         {
             throw new NotImplementedException();
         }
+
+        protected abstract void ProcessMessage(string payload);
     }
 }

@@ -6,5 +6,9 @@
 
     public class CommandProcessor : MessageProcessor
     {
+        protected override void ProcessMessage(string payload)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
